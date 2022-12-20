@@ -1,0 +1,37 @@
+using System;
+
+public class String_stroka
+{
+    public class String
+    {
+        public string stroka;
+        public string Reverse()
+        {
+            string t = "";
+            for (int i = stroka.Length - 1; i > -1; i--) { t = t + stroka[i]; };
+            return t;
+        }
+        public string UcFirst()
+        {
+            return stroka.Substring(0, 1).ToUpper() + stroka.Substring(1);
+        }
+        public string UcWords()
+        {
+            string z = "";
+            foreach (string s in stroka.Split(' '))
+            {
+                z = z + s.Substring(0, 1).ToUpper() + s.Substring(1) + " ";
+            }
+            return z;
+        }
+    }
+
+    public static void Main()
+    {
+        var ms  = new String();
+        ms.stroka = Console.ReadLine();
+        Console.WriteLine(ms.Reverse());
+        Console.WriteLine(ms.UcFirst());
+        Console.WriteLine(ms.UcWords());
+    }
+}
